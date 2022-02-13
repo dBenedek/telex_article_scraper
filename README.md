@@ -1,2 +1,3 @@
-# telex_article_scraper
-Python script for Telex website article scraping and analysis
+# Telex website article scraper
+
+Python script for Telex website article scraping and analysis.
