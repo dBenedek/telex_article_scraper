@@ -181,7 +181,7 @@ if __name__ == "__main__":
     word_counts = Counter(words)
     word_counts_ordered = dict(sorted(word_counts.items(), key=lambda item: item[1]))
     # Create and generate a word cloud image:
-    wordcloud = WordCloud(max_font_size=50, max_words=100, background_color="white").generate(' '.join(words))
+    wordcloud = WordCloud(max_font_size=100, max_words=50, background_color="white").generate(' '.join(words))
     # Display the generated image:
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
