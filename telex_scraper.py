@@ -31,6 +31,7 @@ import json
 
 class TelexScraper:
     def __init__(self, delay=5):
+        # Create data directory:
         if not os.path.exists("telex_data"):
             os.makedirs("telex_data")
         log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -143,6 +144,7 @@ class TelexScraper:
         Exports data as JSON and word cloud as PNG file.
 
         """
+        
         current_date = time.strftime("%Y_%m_%d_%H_%M_%S", time.gmtime())
         year, month, day, hour, minute, second = current_date.split('_')
         out_dir = "telex_data/" + year + "_" + month + "_" + day
@@ -151,7 +153,6 @@ class TelexScraper:
         with open(out_dir + "/wordfreq_" + current_date + ".json", 
                   "w", encoding='utf8') as out:
             json.dump(data, out, ensure_ascii=False)
-        #wc.to_image(out_dir + "/wordcloud_" + current_date + ".png")
         image = wc.to_image()
         image.save(out_dir + "/wordcloud_" + current_date + ".png")
         
